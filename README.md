@@ -18,7 +18,7 @@ su historial crediticio y de otras variables como su ingreso anual.
 - GitHub Actions
 - Render
 ## Pipeline implementado
-| Etapa | Descripción |
+| Etapa | Descripción | 
 | 1. Diseño e instalación | Estructura de carpetas, setup del entorno, definición de
 herramientas |
 | 2. Ingesta | Lectura desde CSV, carga a memoria |
