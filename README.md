@@ -18,30 +18,29 @@ su historial crediticio y de otras variables como su ingreso anual.
 - GitHub Actions
 - Render
 ## Pipeline implementado
-| Etapa | Descripción | 
+| Etapa | Descripción | <br>
 | 1. Diseño e instalación | Estructura de carpetas, setup del entorno, definición de
-herramientas |
-| 2. Ingesta | Lectura desde CSV, carga a memoria |
-| 3. Limpieza | Eliminación de duplicados, tratamiento de nulos, revisión de tipos |
-| 4. Transformación | Creación de variables necesarias. |
-| 5. Validación | Revisión de rangos, tipos, coherencia; validación básica |
-| 6. Carga en PostgreSQL | Subida del dataset limpio y validado a la base de datos local
-| 7. Entrenamiento IA | Clasificación binaria para Default o Pagado |
-8
-| 8. Evaluación | Métricas como accuracy, recall; revisión de logs de ejecución |
-| 9. Visualización | Panel con predicciones |
+herramientas | <br>
+| 2. Ingesta | Lectura desde CSV, carga a memoria | <br>
+| 3. Limpieza | Eliminación de duplicados, tratamiento de nulos, revisión de tipos | <br>
+| 4. Transformación | Creación de variables necesarias. | <br>
+| 5. Validación | Revisión de rangos, tipos, coherencia; validación básica | <br>
+| 6. Carga en PostgreSQL | Subida del dataset limpio y validado a la base de datos local | <br>
+| 7. Entrenamiento IA | Clasificación binaria para Default o Pagado | <br>
+| 8. Evaluación | Métricas como accuracy, recall; revisión de logs de ejecución | <br>
+| 9. Visualización | Panel con predicciones | <br>
 ## Estructura del repositorio
-analisis-crediticio/
-├── README.md
-├── docs/
-│ └── diseño_tecnico.pdf
-├── scripts/
-│ ├── ingesta.py
-│ ├── limpieza.py
-│ ├── transformacion.py
-│ └── entrenamiento.py
-├── data/
-│ └── loan_data.csv
-├── dashboards/
-│ └── dashboard_metabase.png
-├── docker-compose.yml
+analisis-crediticio/ <br>
+├── README.md<br>
+├── docs/<br>
+│ └── diseño_tecnico.pdf<br>
+├── scripts/<br>
+│ ├── ingesta.py<br>
+│ ├── limpieza.py<br>
+│ ├── transformacion.py<br>
+│ └── entrenamiento.py<br>
+├── data/<br>
+│ └── loan_data.csv<br>
+├── dashboards/<br>
+│ └── dashboard_metabase.png<br>
+├── docker-compose.yml<br>
