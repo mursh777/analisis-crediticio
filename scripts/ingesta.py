@@ -4,7 +4,6 @@ import os
 import time
 
 def ejecutar_ingesta():
-    # El host 'db' es el nombre del servicio en tu docker-compose
     db_url = "postgresql://admin:password123@db:5432/loan_db"
     
     print("--- Iniciando proceso de ingesta ---")
@@ -13,13 +12,13 @@ def ejecutar_ingesta():
         # 1. Conexión a la base de datos
         engine = create_engine(db_url)
         
-        # 2. Leer el CSV que subiste
+        # 2. Leer el CSV 
         ruta_csv = 'data/02_loan_data.csv'
         df = pd.read_csv(ruta_csv)
         print(f"Archivo leido exitosamente: {len(df)} filas encontradas.")
 
         # 3. Cargar a PostgreSQL
-        # 'if_exists=replace' crea la tabla si no existe, o la sobreescribe
+        # 'if_exists=replace' crea la tabla si no existe o la sobreescribe
         df.to_sql('prestamos_brutos', engine, if_exists='replace', index=False)
         
         print("¡Éxito! Los datos están cargados en la tabla 'prestamos_brutos'.")
@@ -28,6 +27,5 @@ def ejecutar_ingesta():
         print(f"Error en la ingesta: {e}")
 
 if __name__ == "__main__":
-    # Esperamos unos segundos para que la DB termine de arrancar en Docker
     time.sleep(5)
     ejecutar_ingesta()
