@@ -1,13 +1,9 @@
 FROM python:3.9
 
-# Instalamos dependencias del sistema necesarias para compilar 
-RUN apt-get update && apt-get install -y \
-    libpq-dev \
-    gcc \
-    python3-dev \
-    && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /app
+
+ENV PYTHONPATH=/app
+
 
 # Copiamos los requerimientos para aprovechar la caché de Docker
 COPY requirements.txt .
