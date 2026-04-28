@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.9
 
 # Instalamos dependencias del sistema necesarias para compilar 
 RUN apt-get update && apt-get install -y \

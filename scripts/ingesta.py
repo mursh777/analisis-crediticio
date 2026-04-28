@@ -19,9 +19,9 @@ def ejecutar_ingesta():
 
         # 3. Cargar a PostgreSQL
         # 'if_exists=replace' crea la tabla si no existe o la sobreescribe
-        df.to_sql('prestamos_brutos', engine, if_exists='replace', index=False)
+        df.to_sql('prestamos_crudos', engine, if_exists='append', index=False)
         
-        print("¡Éxito! Los datos están cargados en la tabla 'prestamos_brutos'.")
+        print("¡Éxito! Los datos están cargados en la tabla 'prestamos_crudos'.")
         
     except Exception as e:
         print(f"Error en la ingesta: {e}")
