@@ -2,13 +2,15 @@ services:
   db:
     image: postgres:15
     container_name: postgres_db
-    restart: always
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=password123
       - POSTGRES_DB=loan_db
+    volumes: 
+      - ./db:/docker-entrypoint-initdb.d
     ports:
       - "5433:5432"
+    restart: always
 
   app:
     build: .
