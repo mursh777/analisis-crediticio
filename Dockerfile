@@ -9,8 +9,8 @@ ENV PYTHONPATH=/app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiamos el resto del proyecto incluyendo la carpeta data y scripts
+# Copiamos el resto del proyecto incluyendo la carpeta data y src
 COPY . .
 
 # El comando que ejecutara la ingesta
-CMD ["python", "scripts/ingesta.py"]
+CMD ["python", "src/ingesta/ingesta.py"]
