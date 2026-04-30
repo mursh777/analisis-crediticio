@@ -8,12 +8,12 @@ class QualityCheck:
         self.exclude_inconsistencies = exclude_inconsistencies or []
     
     #Valores nulos
-    def has_nulls(self):
-        return self.data.isnull().sum().sum()
+    def has_nulls(self) -> bool:
+        return self.data.isnull().values.any()
     
     #Valores duplicados
-    def has_duplicates(self):
-        return self.data.duplicated().sum()
+    def has_duplicates(self) -> bool:
+        return self.data.duplicated().any()
     
     #Valores atipicos
     def has_outliers(self):
@@ -61,8 +61,8 @@ class QualityCheck:
             "inconsistencias": 0.3
         }
         checks = {
-            "nulos/faltantes": self.has_nulls(),
-            "duplicados": self.has_duplicates(),
+            "nulos/faltantes": bool(self.has_nulls()),
+            "duplicados": bool(self.has_duplicates()),
             "outliers": self.has_outliers(),
             "inconsistencias": self.has_inconsistencies()
         }
