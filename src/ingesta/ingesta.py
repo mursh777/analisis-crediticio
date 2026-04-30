@@ -2,6 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 import os
 import time
+from src.common.database import get_engine
 
 def ejecutar_ingesta():
     db_url = "postgresql://admin:password123@db:5432/loan_db"
