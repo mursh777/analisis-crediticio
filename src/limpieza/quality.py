@@ -90,7 +90,7 @@ def ejecutar_diagnostico():
         checker = QualityCheck(df, exclude_inconsistencies=['loan_status'])
         reporte = checker.full_report()
 
-        print("\n=== chequeo de calidad de datos ===")
+        print("\n=== CHEQUEO CALIDAD DE DATOS ===")
         for k, v in reporte.items():
             print(f" > {k}: {v}")
 

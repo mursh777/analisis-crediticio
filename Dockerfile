@@ -5,7 +5,7 @@ WORKDIR /app
 ENV PYTHONPATH=/app
 
 
-# Copiamos los requerimientos para aprovechar la caché de Docker
+# Copiamos los requerimientos 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

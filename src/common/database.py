@@ -4,12 +4,12 @@ import os
 def get_engine():
     user = "admin"
     password = "password123"
-    host = "db"  # Usamos 'db' porque así se llama el servicio en Docker
+    host = "db"  
     port = "5432"
     db_name = "loan_db"
     
     url = f"postgresql://{user}:{password}@{host}:{port}/{db_name}"
     
-    # Creamos el motor de conexión
+    #Motor de conexion
     engine = create_engine(url)
     return engine
