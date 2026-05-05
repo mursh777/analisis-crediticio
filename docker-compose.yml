@@ -3,9 +3,9 @@ services:
     image: postgres:15
     container_name: postgres_db
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=password123
-      - POSTGRES_DB=loan_db
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     volumes: 
       - ./db:/docker-entrypoint-initdb.d
     ports:
@@ -20,6 +20,8 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://admin:password123@db:5432/loan_db
+      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
       - PYTHONPATH=/app
+    env_file:
+      - .env
     command: python src/ingesta/ingesta.py
