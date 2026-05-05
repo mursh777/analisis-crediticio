@@ -5,13 +5,13 @@ import time
 from src.common.database import get_engine
 
 def ejecutar_ingesta():
-    db_url = "postgresql://admin:password123@db:5432/loan_db"
+
     
     print("--- Iniciando proceso de ingesta ---")
     
     try:
         # 1. Conexión a la base de datos
-        engine = create_engine(db_url)
+        engine = get_engine()
         
         # 2. Leer el CSV 
         ruta_csv = 'data/02_loan_data.csv'
