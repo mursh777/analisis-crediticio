@@ -1,4 +1,4 @@
-# Predicción de Evaluaciones de Riesgos Crediticios
+# Predicción de Riesgos Crediticios
 El proyecto tiene como objetivo predecir, mediante un modelo de IA, si se acepta el
 préstamo solicitado por un cliente o se rechaza por riesgo de no pago, dependiendo de
 su historial crediticio y de otras variables como su ingreso anual.
