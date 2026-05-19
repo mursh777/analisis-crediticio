@@ -81,12 +81,12 @@ def ejecutar_limpieza():
     pipeline = build_pipeline(X)
     X_limpio = pipeline.fit_transform(X)
 
-    # Obtener nombres finales del pipeline completo
+    # Obtener nombres 
     nombres_finales = pipeline.get_feature_names_out()
     
     df_final = pd.DataFrame(X_limpio, columns=nombres_finales)
     
-    # Limpieza estética de nombres (quita prefijos num__ y cat__)
+    # Limpieza estética
     df_final.columns = [c.split('__')[-1] for c in df_final.columns]
     
     df_final['loan_status'] = y.values

@@ -19,7 +19,7 @@ def ejecutar_ingesta():
         print(f"Archivo leido exitosamente: {len(df)} filas encontradas.")
 
         # 3. Cargar a PostgreSQL
-        # 'if_exists=replace' crea la tabla si no existe o la sobreescribe
+        # 'if_exists=replace' crea la tabla, si no existe o la sobreescribe
         df.to_sql('prestamos_crudos', con=engine, if_exists='append', index=False)
         
         print("¡Éxito! Los datos están cargados en la tabla 'prestamos_crudos'.")
